@@ -16,6 +16,17 @@ public class Raycast : MonoBehaviour
 
     public float looking;
 
+    public AudioClip soundeffectdepart;
+    public AudioClip soundeffectarrive;
+    private AudioSource zic;
+
+    public GameObject joueur;
+
+    void Awake()
+    {
+        zic = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         looking = 0.0f;
@@ -24,7 +35,7 @@ public class Raycast : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(looking);
+        //Debug.Log(looking);
 
         //déplace la caméra avec la souris
         float h = horizontalSpeed * Input.GetAxis("Mouse X");
@@ -61,7 +72,8 @@ public class Raycast : MonoBehaviour
                     if (looking >= 170)
                     {
                         Joueur.SetBool("Trigger 2", true);
-                    }   
+                        zic.PlayOneShot(soundeffectdepart);
+                    }
                 }
                 //Detecte une collision avec le jardin
                 else if (hit.collider.tag == "Jardin")
@@ -81,10 +93,11 @@ public class Raycast : MonoBehaviour
                     if (looking >= 170)
                     {
                         Joueur.SetBool("Trigger 3", true);
+                        zic.PlayOneShot(soundeffectdepart);
                     }
                 }
                 //Detecte une collision avec le lac
-               else  if (hit.collider.tag == "Lac")
+                else if (hit.collider.tag == "Lac")
                 {
                     //Lac true
                     LacAnimator.SetBool("Show", true);
@@ -101,9 +114,10 @@ public class Raycast : MonoBehaviour
                     if (looking >= 170)
                     {
                         Joueur.SetBool("Trigger 4", true);
+                        zic.PlayOneShot(soundeffectdepart);
                     }
                 }
-                else 
+                else
                 {
                     //Temple false
                     TempleAnimator.SetBool("Show", false);
@@ -118,7 +132,24 @@ public class Raycast : MonoBehaviour
                     looking = 0;
                 }
             }
+
+
         }
-    }
-}  
-  
+
+       
+        }
+    /*
+    void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.name == "box trigger 1")
+        {
+            print("bouh");
+            if (looking >= 170)
+            {
+                print("coucou");
+                zic.PlayOneShot(soundeffectdepart);
+            }
+        }
+    }*/
+}
+

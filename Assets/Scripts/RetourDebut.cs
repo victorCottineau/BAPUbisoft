@@ -17,10 +17,11 @@ public class RetourDebut : MonoBehaviour {
     float pivotbx ;
     float pivotby ;
     */
+    
 
     void Start () {
-        //(PanelFlash.gameObject).SetActive(false);
-     }
+     
+    }
 
     void OnTriggerStay(Collider col){
         if (Input.GetKeyDown(KeyCode.S))
@@ -31,18 +32,7 @@ public class RetourDebut : MonoBehaviour {
 
     IEnumerator Example()
     {
-        //(PanelFlash.gameObject).SetActive(true);
-        //flash = false;
-        /*PanelHaut.GetComponent<RectTransform>().pivot = new Vector2(pivothx, pivothy);
-        PanelBas.GetComponent<RectTransform>().pivot = new Vector2(pivotbx, pivotby);
-
-        for (i = 0; i < 10; i++){
-            pivothx = pivothx + 1;
-            pivothy = pivothy + 1;
-            pivotbx = pivotbx - 1;
-            pivotby = pivotby - 1;
-        }
-        */
+              
         animatorpanelhaut.SetBool("panel haut ferme", true);
         animatorpanelbas.SetBool("panel bas ferme", true);
 
