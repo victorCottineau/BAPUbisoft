@@ -17,7 +17,10 @@ public class Raycast : MonoBehaviour
     public float looking;
 
     public AudioClip soundeffectdepart;
-    public AudioClip soundeffectarrive;
+    public AudioClip soundtemple;
+    public AudioClip soundjardin;
+    public AudioClip soundlac;
+
     private AudioSource zic;
 
     public GameObject joueur;
@@ -68,11 +71,17 @@ public class Raycast : MonoBehaviour
                     LacAnimator.SetBool("Show", false);
                     LacAnimator.SetFloat("Speed", -1.0f);
 
+                   
+                    zic.Stop();
+                    zic.PlayOneShot(soundtemple);
+                   
+
                     looking++;
                     if (looking >= 170)
                     {
                         Joueur.SetBool("Trigger 2", true);
                         zic.PlayOneShot(soundeffectdepart);
+                        
                     }
                 }
                 //Detecte une collision avec le jardin
@@ -88,6 +97,9 @@ public class Raycast : MonoBehaviour
                     //Lac false
                     LacAnimator.SetBool("Show", false);
                     LacAnimator.SetFloat("Speed", -1.0f);
+
+                    zic.Stop();
+                    zic.PlayOneShot(soundjardin);
 
                     looking++;
                     if (looking >= 170)
@@ -109,6 +121,9 @@ public class Raycast : MonoBehaviour
                     //Jardin false
                     JardinAnimator.SetBool("Show", false);
                     JardinAnimator.SetFloat("Speed", -1.0f);
+
+                    zic.Stop();
+                    zic.PlayOneShot(soundlac);
 
                     looking++;
                     if (looking >= 170)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class sound : MonoBehaviour
 {
 
-    public AudioClip soundeffectdepart;
+   // public AudioClip soundeffectdepart;
     public AudioClip soundeffectarrive;
     private AudioSource zic;
 
