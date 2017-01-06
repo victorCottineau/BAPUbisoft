@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class sound : MonoBehaviour
 {
-
-   // public AudioClip soundeffectdepart;
     public AudioClip soundeffectarrive;
     private AudioSource zic;
 
     public Animator animator;
 
     public bool h;
+    public bool positiontemple;
 
 
     void Awake()
@@ -19,7 +18,6 @@ public class sound : MonoBehaviour
         zic = GetComponent<AudioSource>();
     }
 
-    // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,30 +26,32 @@ public class sound : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //Joueur arrive à destination
         if ((other.gameObject.name == "box sound start") || (other.gameObject.name == "box sound arrivee 2") || (other.gameObject.name == "box sound arrivee 3") || (other.gameObject.name == "box sound arrivee 4"))
         {
+            //Joue son poussette qui ralentis
             zic.PlayOneShot(soundeffectarrive);
+            
         }
-        /*if (col.gameObject.name == "box trigger 1")
-        {
 
-            print("coucou");
-           
-        }*/
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    //Arrivé à destination
+    void OnTriggerStay(Collider other)
     {
-        if (h == true)
+        //Arrivé au temple 
+        if (other.gameObject.name == "box trigger 2")
+           {
+            positiontemple = true;
+        }
+        else
         {
-            print(h);
+            positiontemple = false;
         }
     }
+    
 
-    void OnStateEnter()
-    {
 
-    }
+   
 }
 

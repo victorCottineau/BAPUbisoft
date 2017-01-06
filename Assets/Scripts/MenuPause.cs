@@ -8,7 +8,7 @@ public class MenuPause : MonoBehaviour {
     public GameObject ButtonContinuer ;
     public GameObject ButtonRecommencer ;
     public GameObject ButtonQuitter ;
-    public Animator animation ;
+    public Animator animationb ;
     public GameObject PanelFondMenuPause;
 
     void Update () {
@@ -41,7 +41,7 @@ public class MenuPause : MonoBehaviour {
 
     public void recommencer ()
     {
-        animation.Rebind();
+        animationb.Rebind();
         StartCoroutine(Example());
         isPaused = !isPaused;
         
