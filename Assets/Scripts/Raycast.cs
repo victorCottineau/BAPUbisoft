@@ -69,11 +69,9 @@ public class Raycast : MonoBehaviour
                     TempleAnimator.SetFloat("Speed", 1.0f);
 
                     //Jardin false
-                    JardinAnimator.SetBool("Show", false);
-                    JardinAnimator.SetFloat("Speed", -1.0f);
+                    JardinFalse();
                     //Lac false
-                    LacAnimator.SetBool("Show", false);
-                    LacAnimator.SetFloat("Speed", -1.0f);
+                    LacFalse();
 
                     //Joue musique que du temple 
                     zic.Stop();
@@ -98,11 +96,9 @@ public class Raycast : MonoBehaviour
                     JardinAnimator.SetFloat("Speed", 1.0f);
 
                     //Temple false
-                    TempleAnimator.SetBool("Show", false);
-                    TempleAnimator.SetFloat("Speed", -1.0f);
+                    TempleFalse();
                     //Lac false
-                    LacAnimator.SetBool("Show", false);
-                    LacAnimator.SetFloat("Speed", -1.0f);
+                    LacFalse();
 
                     //Joue musique que du jardin 
                     zic.Stop();
@@ -125,11 +121,9 @@ public class Raycast : MonoBehaviour
                     LacAnimator.SetFloat("Speed", 1.0f);
 
                     //Temple false
-                    TempleAnimator.SetBool("Show", false);
-                    TempleAnimator.SetFloat("Speed", -1.0f);
+                    TempleFalse();
                     //Jardin false
-                    JardinAnimator.SetBool("Show", false);
-                    JardinAnimator.SetFloat("Speed", -1.0f);
+                    JardinFalse();
 
                     //Joue musique que du lac
                     zic.Stop();
@@ -155,14 +149,12 @@ public class Raycast : MonoBehaviour
                 else
                 {
                     //Temple false
-                    TempleAnimator.SetBool("Show", false);
-                    TempleAnimator.SetFloat("Speed", -1.0f);
+                    TempleFalse();
                     //Jardin false
-                    JardinAnimator.SetBool("Show", false);
-                    JardinAnimator.SetFloat("Speed", -1.0f);
+                    JardinFalse();
                     //Lac false
-                    LacAnimator.SetBool("Show", false);
-                    LacAnimator.SetFloat("Speed", -1.0f);
+                    LacFalse();
+
                     //Carillon false
                     interactioncarillon = false;
 
@@ -174,6 +166,52 @@ public class Raycast : MonoBehaviour
         }
 
        
+    }
+
+    void TempleFalse()
+    {
+        AnimatorStateInfo TemplecurrentState = TempleAnimator.GetCurrentAnimatorStateInfo(0);
+        float TemplePlayBackTime = TemplecurrentState.normalizedTime;
+
+        if (TemplePlayBackTime <= 0 || TemplePlayBackTime >= 1)
+        {
+            TempleAnimator.Play("TempleIdle");
+        }
+        else
+        {
+            TempleAnimator.SetBool("Show", false);
+            TempleAnimator.SetFloat("Speed", -1.0f);
+        }
+    }
+    void JardinFalse()
+    {
+        AnimatorStateInfo JardincurrentState = JardinAnimator.GetCurrentAnimatorStateInfo(0);
+        float JardinPlayBackTime = JardincurrentState.normalizedTime;
+
+        if (JardinPlayBackTime <= 0 || JardinPlayBackTime >= 1)
+        {
+            JardinAnimator.Play("JardinIdle");
+        }
+        else
+        {
+            JardinAnimator.SetBool("Show", false);
+            JardinAnimator.SetFloat("Speed", -1.0f);
+        }
+    }
+    void LacFalse()
+    {
+        AnimatorStateInfo LaccurrentState = LacAnimator.GetCurrentAnimatorStateInfo(0);
+        float LacPlayBackTime = LaccurrentState.normalizedTime;
+
+        if (LacPlayBackTime <= 0 || LacPlayBackTime >= 1)
+        {
+            LacAnimator.Play("LacIdle");
+        }
+        else
+        {
+            JardinAnimator.SetBool("Show", false);
+            LacAnimator.SetFloat("Speed", -1.0f);
+        }
     }
   
 }
