@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: 902ae3a9f925a6c46a30218c354abc95
+timeCreated: 1484132441
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box002
+    100004: marche
+    100006: marche001
+    100008: marche002
+    100010: marche003
+    100012: marche004
+    100014: marche005
+    100016: marche006
+    100018: marche007
+    100020: marche008
+    100022: marche009
+    100024: marche010
+    100026: marche011
+    100028: marche012
+    100030: marche013
+    100032: sol
+    100034: //RootNode
+    100036: tori
+    400000: Box001
+    400002: Box002
+    400004: marche
+    400006: marche001
+    400008: marche002
+    400010: marche003
+    400012: marche004
+    400014: marche005
+    400016: marche006
+    400018: marche007
+    400020: marche008
+    400022: marche009
+    400024: marche010
+    400026: marche011
+    400028: marche012
+    400030: marche013
+    400032: sol
+    400034: //RootNode
+    400036: tori
+    2300000: Box001
+    2300002: Box002
+    2300004: marche
+    2300006: marche001
+    2300008: marche002
+    2300010: marche003
+    2300012: marche004
+    2300014: marche005
+    2300016: marche006
+    2300018: marche007
+    2300020: marche008
+    2300022: marche009
+    2300024: marche010
+    2300026: marche011
+    2300028: marche012
+    2300030: marche013
+    2300032: sol
+    2300034: tori
+    3300000: Box001
+    3300002: Box002
+    3300004: marche
+    3300006: marche001
+    3300008: marche002
+    3300010: marche003
+    3300012: marche004
+    3300014: marche005
+    3300016: marche006
+    3300018: marche007
+    3300020: marche008
+    3300022: marche009
+    3300024: marche010
+    3300026: marche011
+    3300028: marche012
+    3300030: marche013
+    3300032: sol
+    3300034: tori
+    4300000: Box001
+    4300002: Box002
+    4300004: marche
+    4300006: marche001
+    4300008: marche002
+    4300010: marche003
+    4300012: marche004
+    4300014: marche005
+    4300016: marche006
+    4300018: marche007
+    4300020: marche008
+    4300022: marche009
+    4300024: marche010
+    4300026: marche011
+    4300028: marche012
+    4300030: marche013
+    4300032: sol
+    4300034: tori
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,7 +11,7 @@ public class Poisson : MonoBehaviour
     public float horizontalSpeed = 2.0f;
     public float verticalSpeed = 2.0f;
 
-    public Renderer rend;
+    public Material rend;
 
     void Start()
     {
@@ -40,12 +40,12 @@ public class Poisson : MonoBehaviour
             {
                 if (hit.collider.tag == "Poisson")
                 {
-                    rend.material.color = Color.red;
+                    rend.color = Color.red;
                     PoissonAnimator.SetFloat("Speed", 1.0f);
                 }
                 else if (hit.collider.tag != "Poisson")
                 {
-                    rend.material.color = Color.blue;
+                    rend.color = Color.blue;
                     PoissonAnimator.SetFloat("Speed", 0.0f);
                 }
             }
