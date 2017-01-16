@@ -40,11 +40,13 @@ public class Poisson : MonoBehaviour
             {
                 if (hit.collider.tag == "Poisson")
                 {
+                    Debug.Log("Poisson");
                     rend.color = Color.red;
                     PoissonAnimator.SetFloat("Speed", 1.0f);
                 }
                 else if (hit.collider.tag != "Poisson")
                 {
+                    Debug.Log("PasPoisson");
                     rend.color = Color.blue;
                     PoissonAnimator.SetFloat("Speed", 0.0f);
                 }
