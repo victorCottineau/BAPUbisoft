@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 7ae5e1af1f741fc4387ff4caf20484c5
-timeCreated: 1484131859
+guid: 1be9605e0ec07a546ad47edf26664c1b
+timeCreated: 1484579458
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Temple
-    100002: //RootNode
-    400000: Temple
-    400002: //RootNode
-    2300000: Temple
-    3300000: Temple
-    4300000: Temple
+    100000: //RootNode
+    100002: Banc_01_Cham
+    100004: Banc_02_Cham
+    400000: //RootNode
+    400002: Banc_01_Cham
+    400004: Banc_02_Cham
+    2300000: Banc_01_Cham
+    2300002: Banc_02_Cham
+    3300000: Banc_01_Cham
+    3300002: Banc_02_Cham
+    4300000: Banc_01_Cham
+    4300002: Banc_02_Cham
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,22 +1,42 @@
 fileFormatVersion: 2
-guid: dfa334557a7f6274aac824c37c0f7066
-timeCreated: 1484132946
+guid: 29c58dc2043154045ac8874ba2c83397
+timeCreated: 1484579239
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Banc_01_Cham
-    100004: Banc_02_Cham
-    400000: //RootNode
-    400002: Banc_01_Cham
-    400004: Banc_02_Cham
-    2300000: Banc_01_Cham
-    2300002: Banc_02_Cham
-    3300000: Banc_01_Cham
-    3300002: Banc_02_Cham
-    4300000: Banc_01_Cham
-    4300002: Banc_02_Cham
+    100000: bambou
+    100002: Cylinder002
+    100004: Cylinder003
+    100006: Cylinder004
+    100008: eau
+    100010: //RootNode
+    100012: Sphere014
+    400000: bambou
+    400002: Cylinder002
+    400004: Cylinder003
+    400006: Cylinder004
+    400008: eau
+    400010: //RootNode
+    400012: Sphere014
+    2300000: bambou
+    2300002: Cylinder002
+    2300004: Cylinder003
+    2300006: Cylinder004
+    2300008: eau
+    2300010: Sphere014
+    3300000: bambou
+    3300002: Cylinder002
+    3300004: Cylinder003
+    3300006: Cylinder004
+    3300008: eau
+    3300010: Sphere014
+    4300000: bambou
+    4300002: Cylinder002
+    4300004: Cylinder003
+    4300006: Cylinder004
+    4300008: eau
+    4300010: Sphere014
   materials:
     importMaterials: 1
     materialName: 0
