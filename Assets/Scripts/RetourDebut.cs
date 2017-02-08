@@ -17,7 +17,10 @@ public class RetourDebut : MonoBehaviour {
     float pivotbx ;
     float pivotby ;
     */
-    
+
+    /*public GameObject TempleTrigger;
+    public GameObject JardinTrigger;
+    public GameObject LacTrigger;*/
 
     void Start () {
      
@@ -26,7 +29,17 @@ public class RetourDebut : MonoBehaviour {
     void OnTriggerStay(Collider col){
         if (Input.GetKeyDown(KeyCode.S))
         {
+            /*
+            Raycast.GoingToJardin = false;
+            Raycast.GoingToLac = false;
+            Raycast.GoingToTemple = false;
+            */
             StartCoroutine(Example());
+            /*
+           TempleTrigger.GetComponent<BoxCollider>().enabled = true;
+            JardinTrigger.GetComponent<BoxCollider>().enabled = true;
+            LacTrigger.GetComponent<BoxCollider>().enabled = true;
+            */
         }  
     }
 
@@ -42,13 +55,14 @@ public class RetourDebut : MonoBehaviour {
         animator.SetBool("Trigger 2", false);
         animator.SetBool("Trigger 3", false);
         animator.SetBool("Trigger 4", false);
-        yield return new WaitForSeconds(3);
-
+       // yield return new WaitForSeconds(3);
+        Application.LoadLevel(Application.loadedLevel);
+        /*
         animatorpanelhaut.SetBool("panel haut ferme", false);
         animatorpanelhaut.Play("ouvert", -1, 1f);
         animatorpanelbas.SetBool("panel bas ferme", false);
         animatorpanelbas.Play("ouvert2", -1, 1f);
-
+        */
         /*
         for (i = 0; i < 10; i++){
             pivothx = pivothx - 1;

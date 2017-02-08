@@ -41,10 +41,11 @@ public class MenuPause : MonoBehaviour {
 
     public void recommencer ()
     {
-        animationb.Rebind();
-        StartCoroutine(Example());
-        isPaused = !isPaused;
-        
+        /* animationb.Rebind();
+         StartCoroutine(Example());
+         isPaused = !isPaused;*/
+        Application.LoadLevel(Application.loadedLevel);
+
     }
 
     public void quitter()

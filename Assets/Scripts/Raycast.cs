@@ -26,7 +26,17 @@ public class Raycast : MonoBehaviour
     public GameObject joueur;
     public bool interactioncarillon;
 
- 
+    private bool Temple;
+    private bool Jardin;
+    private bool Lac;
+
+    public static bool GoingToTemple;
+    public static bool GoingToJardin;
+    public static bool GoingToLac;
+
+    public  GameObject TempleTrigger;
+    public  GameObject JardinTrigger;
+    public  GameObject LacTrigger;
 
     void Awake()
     {
@@ -38,6 +48,14 @@ public class Raycast : MonoBehaviour
     {
         looking = 0.0f;
         camerajoueur = GetComponent<Camera>();
+
+        Temple = false;
+        Lac = false;
+        Jardin = false;
+
+        GoingToJardin = false;
+        GoingToLac = false;
+        GoingToTemple = false;
     }
 
     void Update()
@@ -74,15 +92,24 @@ public class Raycast : MonoBehaviour
                     LacFalse();
 
                     //Joue musique que du temple 
-                    zic.Stop();
-                    zic.PlayOneShot(soundtemple);
+                    if (Temple == false)
+                    {
+                        Temple = true;
+                        Jardin = false;
+                        Lac = false;
+                        zic.Stop();
+                        zic.PlayOneShot(soundtemple);
+                    }
+                    
                     //Carillon false
                     interactioncarillon = false;
 
 
                     looking++;
-                    if (looking >= 170)
+                    if (looking >= 130)
                     {
+                        TempleTrigger.GetComponent<BoxCollider>().enabled = false;
+                        GoingToTemple = true;
                         Joueur.SetBool("Trigger 2", true);
                         zic.PlayOneShot(soundeffectdepart);
 
@@ -101,14 +128,23 @@ public class Raycast : MonoBehaviour
                     LacFalse();
 
                     //Joue musique que du jardin 
-                    zic.Stop();
-                    zic.PlayOneShot(soundjardin);
+                    if (Jardin == false)
+                    {
+                        Jardin = true;
+                        Temple = false;
+                        Lac = false;
+                        zic.Stop();
+                        zic.PlayOneShot(soundjardin);
+                    }
+                    
                     //Carillon false
                     interactioncarillon = false;
 
                     looking++;
-                    if (looking >= 170)
+                    if (looking >= 130)
                     {
+                        JardinTrigger.GetComponent<BoxCollider>().enabled = false;
+                        GoingToJardin = true;
                         Joueur.SetBool("Trigger 3", true);
                         zic.PlayOneShot(soundeffectdepart);
                     }
@@ -116,6 +152,7 @@ public class Raycast : MonoBehaviour
                 //Detecte une collision avec le lac
                 else if (hit.collider.tag == "Lac")
                 {
+                    Debug.Log("Lac");
                     //Lac true
                     LacAnimator.SetBool("Show", true);
                     LacAnimator.SetFloat("Speed", 1.0f);
@@ -126,14 +163,23 @@ public class Raycast : MonoBehaviour
                     JardinFalse();
 
                     //Joue musique que du lac
-                    zic.Stop();
-                    zic.PlayOneShot(soundlac);
+                    if (Lac == false)
+                    {
+                        Lac = true;
+                        Temple = false;
+                        Jardin = false;
+                        zic.Stop();
+                        zic.PlayOneShot(soundlac);
+                    }
+                    
                     //Carillon false
                     interactioncarillon = false;
 
                     looking++;
-                    if (looking >= 170)
+                    if (looking >= 130)
                     {
+                        LacTrigger.GetComponent<BoxCollider>().enabled = false;
+                        GoingToLac = true;
                         Joueur.SetBool("Trigger 4", true);
                         zic.PlayOneShot(soundeffectdepart);
                     }
@@ -173,7 +219,7 @@ public class Raycast : MonoBehaviour
         AnimatorStateInfo TemplecurrentState = TempleAnimator.GetCurrentAnimatorStateInfo(0);
         float TemplePlayBackTime = TemplecurrentState.normalizedTime;
 
-        if (TemplePlayBackTime <= 0 || TemplePlayBackTime >= 1)
+        if (GoingToTemple == false && (TemplePlayBackTime <= 0 || TemplePlayBackTime >= 1))
         {
             TempleAnimator.Play("TempleIdle");
         }
@@ -188,12 +234,13 @@ public class Raycast : MonoBehaviour
         AnimatorStateInfo JardincurrentState = JardinAnimator.GetCurrentAnimatorStateInfo(0);
         float JardinPlayBackTime = JardincurrentState.normalizedTime;
 
-        if (JardinPlayBackTime <= 0 || JardinPlayBackTime >= 1)
+        if (GoingToJardin == false && (JardinPlayBackTime <= 0 || JardinPlayBackTime >= 1))
         {
             JardinAnimator.Play("JardinIdle");
         }
         else
         {
+            Debug.Log("Lac2");
             JardinAnimator.SetBool("Show", false);
             JardinAnimator.SetFloat("Speed", -1.0f);
         }
@@ -203,7 +250,7 @@ public class Raycast : MonoBehaviour
         AnimatorStateInfo LaccurrentState = LacAnimator.GetCurrentAnimatorStateInfo(0);
         float LacPlayBackTime = LaccurrentState.normalizedTime;
 
-        if (LacPlayBackTime <= 0 || LacPlayBackTime >= 1)
+        if (GoingToLac == false && (LacPlayBackTime <= 0 || LacPlayBackTime >= 1))
         {
             LacAnimator.Play("LacIdle");
         }
